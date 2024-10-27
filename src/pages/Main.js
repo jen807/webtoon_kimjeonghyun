@@ -78,7 +78,7 @@ const Title = styled.h2`
 const MoreButton = styled.div`
   font-size: 16px;
   color: #444;
-  font-weight: 300;
+  font-weight: 500;
   cursor: pointer;
 `;
 
@@ -87,6 +87,20 @@ const ConWrap = styled.div`
   width: 1551.89px;
   display: flex;
   justify-content: space-between;
+`;
+const TitleText = styled.h3`
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: left;
+`;
+
+const SubTitleText = styled.h4`
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 10px;
+  color: #666;
 `;
 
 const Con = styled(Link)`
@@ -97,12 +111,16 @@ const Con = styled(Link)`
   text-decoration: none;
   color: black;
   position: relative;
+
+  &:hover ${SubTitleText} {
+    text-decoration: underline;
+  }
 `;
 
 const Rank = styled.div`
   position: absolute;
   top: 5px;
-  left: 10px;
+  left: 15px;
   font-size: 50px;
   font-weight: bold;
   color: #ffffff;
@@ -119,23 +137,8 @@ const ConImg = styled.div`
   background-position: center;
 `;
 
-const TitleText = styled.h3`
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 10px;
-  text-align: left;
-`;
-
-const SubTitleText = styled.h4`
-  font-size: 16px;
-  font-weight: 500;
-  text-align: left;
-  margin-top: 10px;
-  color: #444;
-`;
-
 const Event = styled.div`
-  width: 68.61px;
+  width: 40px;
   height: 23.45px;
   border-radius: 50px;
   border: 1px solid #ff6262;
@@ -167,7 +170,7 @@ const Main = () => {
             </ConImg>
             <TitleText>{content.mainTitle}</TitleText>
             <SubTitleText>{content.subTitle}</SubTitleText>
-            <Event>EVENT</Event>
+            <Event>UP</Event>
           </Con>
         ))}
       </ConWrap>

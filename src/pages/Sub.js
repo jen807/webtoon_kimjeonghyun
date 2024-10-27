@@ -94,14 +94,14 @@ const SubContainer = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0 184px;
-  height: calc(100vh - 80px);
+  height: 100vh;
 `;
 
 const Thumbnail = styled.div`
-  width: 291.7px;
-  height: 414.27px;
+  width: 340px;
+  height: 483px;
   background-image: url(${(props) => props.img});
   background-size: cover;
   background-position: center;
@@ -109,29 +109,29 @@ const Thumbnail = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
+  text-align: left;
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 35px;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 20px;
 `;
 
 const SubTitle = styled.h2`
   font-size: 18px;
   font-weight: 500;
-  color: #666;
-  margin: 10px 0;
+  color: #333;
+  margin-bottom: 20px;
 `;
 
 const Description = styled.p`
   font-size: 16px;
-  color: #333;
+  color: #666;
   margin-bottom: 15px;
-  line-height: 20px;
+  line-height: 25px;
   letter-spacing: 0.5;
 `;
 
@@ -147,11 +147,66 @@ const Hashtag = styled.span`
   background-color: white;
   padding: 8px 10px;
   border-radius: 3px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+`;
+
+const Slikebutton = styled.div`
+  background: linear-gradient(to right, #5356f6, #ee78a3);
+  padding: 20px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  color: white;
+  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  span {
+    margin-right: 8px;
+    font-weight: 300;
+  }
+`;
+
+const Sbutton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 20px 100px;
+  margin-right: 30px;
+  color: black;
+  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  span {
+    color: #444;
+    font-weight: 400;
+  }
+`;
+
+const Sshare = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 20px 40px;
+  color: black;
+  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 `;
 
 const Sub = () => {
   const { id } = useParams();
-  const content = contentData[Number(id)];
+  const content = contentData[id];
 
   return (
     <SubContainer>
@@ -172,6 +227,17 @@ const Sub = () => {
             <Hashtag key={index}>#{tag}</Hashtag>
           ))}
         </HashtagWrapper>
+
+        <ButtonWrapper>
+          <Slikebutton>
+            <span>+ 관심</span>
+            {content.likes}
+          </Slikebutton>
+          <Sbutton>
+            첫화보기<span>·1화</span>
+          </Sbutton>
+          <Sshare>공유</Sshare>
+        </ButtonWrapper>
       </ContentWrapper>
     </SubContainer>
   );
