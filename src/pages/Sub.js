@@ -106,6 +106,7 @@ const Thumbnail = styled.div`
   background-size: cover;
   background-position: center;
   margin-right: 50px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
 `;
 
 const ContentWrapper = styled.div`
@@ -204,6 +205,11 @@ const Sshare = styled.div`
   cursor: pointer;
 `;
 
+const NowRank = styled.h1`
+  font-size: 20px;
+  margin-bottom: 20px;
+`;
+
 const Sub = () => {
   const { id } = useParams();
   const content = contentData[id];
@@ -215,6 +221,7 @@ const Sub = () => {
       </SbgImg>
       <Thumbnail img={content.img} />
       <ContentWrapper>
+        <NowRank>현재 랭킹 {content.id + 1}위</NowRank>
         <Title>{content.mainTitle}</Title>
         <SubTitle>{content.subTitle}</SubTitle>
         <Description>

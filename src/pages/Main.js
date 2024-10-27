@@ -71,8 +71,9 @@ const TitleWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
+  margin-bottom: 10px;
 `;
 
 const MoreButton = styled.div`
@@ -89,9 +90,9 @@ const ConWrap = styled.div`
   justify-content: space-between;
 `;
 const TitleText = styled.h3`
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 12px;
   text-align: left;
 `;
 
@@ -148,7 +149,7 @@ const Event = styled.div`
   font-size: 13px;
   font-weight: 500;
   color: #ff6262;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: left;
 `;
 
